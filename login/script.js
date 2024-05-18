@@ -41,7 +41,7 @@ document.querySelectorAll(".animate-input").forEach((e) => {
         button.innerHTML = "비밀번호 표시";
       } else {
         input.setAttribute("type", "text");
-        button.innerHTML = "비밀번호 숨기기";
+        button.innerHTML = "숨기기";
       }
     }
   }
