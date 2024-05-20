@@ -69,3 +69,8 @@ darkmode_toggle.onclick = (e) => {
   // 삼항연산자
   darkmode_toggle.innerHTML = body.classList.contains("dark") ? "Lightmode" : "Darkmode";
 }
+
+
+btn_login.addEventListener('click', function() {
+  signin_form.onsubmit();
+})
