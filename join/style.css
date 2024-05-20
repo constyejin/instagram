@@ -1,0 +1,20 @@
+.join-para {
+  padding: 0 40px;
+  text-align: center;
+}
+
+.join-para.top {
+  margin-bottom: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--txt-second-color)
+}
+
+.join-para.bottom {
+  margin: 20px 0 10px 0;
+  font-size: 11px;
+
+  a {
+    color: var(--a-color);
+  }
+}
