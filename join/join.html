@@ -7,8 +7,109 @@
   <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-  
+  <div class="form-container">
+    <div class="box input-box">
+      <h1 class="logo">
+        <img src="../assets/imgaes/logo-light.png" alt="instagram light-logo" class="logo-light">
+        <img src="../assets/imgaes/logo-dark.png" alt="instagram dark-logo" class="logo-dark">
+      </h1>
+
+      <p class="join-para top">친구들의 사진과 동영상을 보려면 가입하세요.</p>
+
+      <div class="btn-group">
+        <button class="btn-blue">
+          <span>Facebook으로 로그인</span>
+        </button>
+      </div>
+
+      <div class="or-box">
+        <div></div>
+        <div>또는</div>
+        <div></div>
+      </div>
+
+      <div class="signin-form" id="signin-form">
+        <div class="form-group">
+          <div class="animate-input">
+            <span>휴대폰 번호 또는 이메일 주소</span>
+            <input type="text">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="animate-input">
+            <span>성명</span>
+            <input type="text">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="animate-input">
+            <span>사용자 이름</span>
+            <input type="text">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="animate-input">
+            <span>비밀번호</span>
+            <input type="password">
+            <button>비밀번호 표시</button>
+          </div>
+        </div>
+
+        <p class="join-para bottom">
+          저희 서비스를 이용하는 사람이 회원님의 연락처 정보를 Instagram에 업로드했을 수도 있습니다. 
+          <a href="">더 알아보기</a>
+        </p>
+
+        <div class="btn-group">
+          <button class="btn-blue" disabled>가입</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="box join-box">
+      <p>
+        계정이 있으신가요?
+        <a href="../index.html">로그인</a>
+      </p>
+    </div>
+
+    <div class="app-download">
+      <p>앱을 다운로드하세요.</p>
+      <div class="store-link">
+        <a href="">
+          <img src="../assets/imgaes/app-store.png" alt="app-store-img">
+        </a>
+        <a href="">
+          <img src="../assets/imgaes/gg-play.png" alt="gg-play-img">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <ul class="links">
+      <li><a href="">Meta</a></li>
+      <li><a href="">소개</a></li>
+      <li><a href="">블로그</a></li>
+      <li><a href="">채용 정보</a></li>
+      <li><a href="">도움말</a></li>
+      <li><a href="">API</a></li>
+      <li><a href="">개인정보처리방침</a></li>
+      <li><a href="">약관</a></li>
+      <li><a href="">위치</a></li>
+      <li><a href="">Instagram Lite</a></li>
+      <li><a href="" id="darkmode-toggle">Darkmode</a></li>
+    </ul>
+    <div class="copyright">© 2024 Instagram from Meta</div>
+  </footer>
+
+  <script src="../js/script.js"></script>
 </body>
 </html>
