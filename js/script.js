@@ -11,6 +11,9 @@ let darkmode_toggle = document.getElementById("darkmode-toggle");
 
 // let num = (x,y) => x + y;
 
+let idActive = false;
+let pwActive = false;
+
 document.querySelectorAll(".animate-input").forEach((e) => {
   // e : .animate-input이라는 class
   let input = e.querySelector("input");
@@ -22,11 +25,21 @@ document.querySelectorAll(".animate-input").forEach((e) => {
   input.onkeyup = () => {
     if(input.value.trim().length > 0) {
       e.classList.add("active");
+      if(input.getAttribute("type") === "text") {
+        idActive = true;
+      } else if(input.getAttribute("type") === "password") {
+        pwActive = true;
+      }
     } else {
       e.classList.remove("active");
+      if(input.getAttribute("type") === "text") {
+        idActive = false;
+      } else if(input.getAttribute("type") === "password") {
+        pwActive = false;
+      }
     }
 
-    if(input.value.trim().length != 0) {
+    if(idActive && pwActive) {
       btn_login.removeAttribute("disabled");
     } else {
       btn_login.setAttribute("disabled", "true");
