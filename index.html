@@ -15,48 +15,39 @@
 <body>
   <div class="wrapper">
     <div class="form-container">
-      <div class="box input-box">
+      <div class="box login-box">
         <h1 class="logo">
           <img src="./assets/imgaes/logo-light.png" alt="instagram light-logo" class="logo-light">
           <img src="./assets/imgaes/logo-dark.png" alt="instagram dark-logo" class="logo-dark">
         </h1>
 
-        <div>
-          <form id="signin-form" action="./profile/profile.html">
-            <div class="form-group">
-              <div class="animate-input">
-                <span>전화번호, 사용자 이름 또는 이메일</span>
-                <input type="text">
-              </div>
-            </div>
+        <form id="signin-form" action="./profile/profile.html" method="GET">
+          <div class="animate-input">
+            <span>전화번호, 사용자 이름 또는 이메일</span>
+            <input type="text">
+          </div>
 
-            <div class="form-group">
-              <div class="animate-input">
-                <span>비밀번호</span>
-                <input type="password">
-                <button type="button">비밀번호 표시</button>
-              </div>
-            </div>
-          </form>
+          <div class="animate-input">
+            <span>비밀번호</span>
+            <input id="userpw" type="password">
+            <button id="pw-btn" type="button">비밀번호 표시</button>
+          </div>
 
-          <div class="btn-group">
-            <button type="submit" class="btn-blue" id="btn-login" disabled>로그인</button>
-          </div>
-          
-          <div class="or-box">
-            <div></div>
-            <div>또는</div>
-            <div></div>
-          </div>
-          
-          <div class="btn-group">
-            <button class="btn-fb">
-              <img src="./assets/imgaes/facebook-icon.png" alt="facebook-icon">
-              <span>Facebook으로 로그인</span>
-            </button>
-          </div>
-          <a href="" class="forgot-pw">비밀번호를 잊으셨나요?</a>
+          <button type="submit" class="btn-blue" id="login-btn" disabled>로그인</button>
+        </form>
+
+        <div class="or-box">
+          <div></div>
+          <div>또는</div>
+          <div></div>
         </div>
+          
+        <div class="fb-btn">
+          <img src="./assets/imgaes/facebook-icon.png" alt="facebook-icon">
+          <span>Facebook으로 로그인</span>
+        </div>
+        
+        <a href="" class="forgot-pw">비밀번호를 잊으셨나요?</a>
       </div>
 
       <div class="box join-box">
@@ -91,11 +82,12 @@
         <li><a href="">약관</a></li>
         <li><a href="">위치</a></li>
         <li><a href="">Instagram Lite</a></li>
-        <li><a href="" id="darkmode-toggle">Darkmode</a></li>
+        <li><a href="" id="mode-btn">Darkmode</a></li>
       </ul>
       <div class="copyright">© 2024 Instagram from Meta</div>
     </footer>
   </div>
+
   <script src="./js/script.js"></script>
 </body>
 </html>
