@@ -1,19 +1,17 @@
 :root {
+  --white: #fff;
   --body-bg: #fafafa;
-  --box-bg: #fff;
   --box-border-color: #dbdbdb;
   --txt-color: #262626;
   --txt-second-color: #8e8e8e;
-  --btn-bg: #0095f6;
-  --btn-color: #fff;
-  --fb-color: #385185;
-  --a-color: #00376b;
+  --light-blue: #0095f6;
+  --dark-blue: #385185;
 }
 
 .dark {
   --body-bg: #151515;
-  --box-bg: #151515;
-  --box-border-color: #262626;
+  --box-bg: #353535;
+  --box-border-color: #666565;
   --txt-color: #d2d2d2;
 }
 
@@ -21,8 +19,8 @@
   width: 100%;
   border: none;
   outline: none;
-  background-color: var(--btn-bg);
-  color: var(--btn-color);
+  background-color: var(--light-blue);
+  color: var(--white);
   padding: 6px 10px;
   border-radius: 4px;
   font-size: 14px;
@@ -51,10 +49,6 @@ body {
 
 .wrapper {
   position: relative;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
   height: 100vh;
 }
 
@@ -88,11 +82,11 @@ body {
 }
 
 /* body한테 dark라는 클래스가 있을 때 .logo-dark */
-.dark .logo-dark {
+body.dark .logo-dark {
   display: block;
 }
 
-.dark .logo-light {
+body.dark .logo-light {
   display: none;
 }
 
@@ -152,7 +146,11 @@ body {
   cursor: pointer;
 }
 
-.animate-input.active button{
+body.dark .animate-input button {
+  color: var(--white);
+}
+
+.animate-input.active button {
   display: inline;
 }
 
@@ -206,7 +204,7 @@ button:disabled {
 .btn-fb span {
   font-size: 14px;
   font-weight: 700;
-  color: var(--fb-color);
+  color: var(--dark-blue);
 }
 
 .forgot-pw {
@@ -214,7 +212,7 @@ button:disabled {
   font-size: 12px;
   margin: 12px 0 26px 0;
   text-align: center;
-  color: var(--a-color);
+  color: var(--dark-blue);
 }
 
 .join-box {
@@ -229,7 +227,7 @@ button:disabled {
 
 .join-box a {
   font-weight: 700;
-  color: var(--btn-bg);
+  color: var(--light-blue);
 }
 
 .app-download {
