@@ -1,43 +1,81 @@
-let signinForm = document.getElementById("signin-form");
+let loginForm = document.getElementById("login-form");
 let loginBtn = document.getElementById("login-btn");
-let modeBtn = document.getElementById("mode-btn");
 
 let idActive = false;
 let pwActive = false;
 
-let animateInputs = document.querySelectorAll('.animate-input');
+let userId = document.getElementById('userid');
+let userPw = document.getElementById('userpw');
 
-animateInputs.forEach((item) => {
-  let input = item.querySelector("input");
+// 공통 함수: 입력 필드 상태 업데이트
+// loginBtn 활성화 / 비활성화
+function updateInputState(input, activeVar) {
+  if(input.value.trim().length > 0) {
+    input.parentElement.classList.add("active");
+    activeVar = true;
+  } else {
+    input.parentElement.classList.remove("active");
+    activeVar = false;
+  }
 
-  // trim() : 공백을 제거하는 함수
-  input.addEventListener('keyup', () => {
-    if(input.value.trim().length > 0) {
-      item.classList.add("active");
-      if(input.getAttribute("type") === "text") {
-        idActive = true;
-      } else if(input.getAttribute("type") === "password") {
-        pwActive = true;
-      }
-    } else {
-      item.classList.remove("active");
-      if(input.getAttribute("type") === "text") {
-        idActive = false;
-      } else if(input.getAttribute("type") === "password") {
-        pwActive = false;
-      }
-    }
+  return activeVar;
+}
 
-    if(idActive && pwActive) {
-      loginBtn.removeAttribute("disabled");
-      loginBtn.addEventListener('click', function() {
-        signin_form.submit();
-      })
-    } else {
-      loginBtn.setAttribute("disabled", "true");
-    }
-  })
-})
+function handleInput(e) {
+  let input = e.target;
+  let type = input.getAttribute("type");
+
+  if (type === "text") {
+    idActive = updateInputState(input, idActive);
+  } else if (type === "password") {
+    pwActive = updateInputState(input, pwActive);
+  }
+
+  if(idActive && pwActive) {
+    loginBtn.removeAttribute("disabled");
+  } else {
+    loginBtn.setAttribute("disabled", "true");
+  }
+}
+
+userId.addEventListener('keyup', handleInput);
+userPw.addEventListener('keyup', handleInput);
+
+
+
+// let animateInputs = document.querySelectorAll('.animate-input');
+
+// animateInputs.forEach((item) => {
+//   let input = item.querySelector("input");
+
+//   // trim() : 공백을 제거하는 함수
+//   input.addEventListener('keyup', () => {
+//     if(input.value.trim().length > 0) {
+//       item.classList.add("active");
+//       if(input.getAttribute("type") === "text") {
+//         idActive = true;
+//       } else if(input.getAttribute("type") === "password") {
+//         pwActive = true;
+//       }
+//     } else {
+//       item.classList.remove("active");
+//       if(input.getAttribute("type") === "text") {
+//         idActive = false;
+//       } else if(input.getAttribute("type") === "password") {
+//         pwActive = false;
+//       }
+//     }
+
+//     if(idActive && pwActive) {
+//       loginBtn.removeAttribute("disabled");
+//       loginBtn.addEventListener('click', function() {
+//         signin_form.submit();
+//       })
+//     } else {
+//       loginBtn.setAttribute("disabled", "true");
+//     }
+//   })
+// })
 
 
 // 비밀번호 표시 / 숨기기
@@ -56,7 +94,19 @@ function pwToggle() {
 pwBtn.addEventListener('click', pwToggle);
 
 
-// darkmode toggle
+// id, pw submit
+// loginBtn.addEventListener('click', function(e) {
+//   if (idActive && pwActive) {
+//     loginForm.submit();
+//   } else {
+//     e.preventDefault();
+//   }
+// });
+
+
+// Dark | Light Mode Toggle
+let modeBtn = document.getElementById("mode-btn");
+
 function modeToggle(e) {
   e.preventDefault();
   let body = document.querySelector("body");
@@ -66,6 +116,5 @@ function modeToggle(e) {
   darkmode_toggle.innerHTML = body.classList.contains("dark") ? "Lightmode" : "Darkmode";
 }
 modeBtn.addEventListener('click', modeToggle);
-
 
 
