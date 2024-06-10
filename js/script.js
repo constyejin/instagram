@@ -1,37 +1,26 @@
-let signin_form = document.getElementById("signin-form");
-let btn_login = document.getElementById("btn-login");
-let darkmode_toggle = document.getElementById("darkmode-toggle");
-
-// 화살표 함수(arrow function)
-// 함수 선언문 방식 보다 훨씬 간결하게 함수를 만들 수 있다.
-
-// let num = function(x,y) {
-//   return x + y;
-// }
-
-// let num = (x,y) => x + y;
+let signinForm = document.getElementById("signin-form");
+let loginBtn = document.getElementById("login-btn");
+let modeBtn = document.getElementById("mode-btn");
 
 let idActive = false;
 let pwActive = false;
 
-document.querySelectorAll(".animate-input").forEach((e) => {
-  // e : .animate-input이라는 class
-  let input = e.querySelector("input");
-  let button = e.querySelector("button");
+let animateInputs = document.querySelectorAll('.animate-input');
 
-  // onkeyup
-  // 사용자가 키보드의 키를 눌렀다가 떼었을 때 발생하는 이벤트
+animateInputs.forEach((item) => {
+  let input = item.querySelector("input");
+
   // trim() : 공백을 제거하는 함수
-  input.onkeyup = () => {
+  input.addEventListener('keyup', () => {
     if(input.value.trim().length > 0) {
-      e.classList.add("active");
+      item.classList.add("active");
       if(input.getAttribute("type") === "text") {
         idActive = true;
       } else if(input.getAttribute("type") === "password") {
         pwActive = true;
       }
     } else {
-      e.classList.remove("active");
+      item.classList.remove("active");
       if(input.getAttribute("type") === "text") {
         idActive = false;
       } else if(input.getAttribute("type") === "password") {
@@ -40,28 +29,35 @@ document.querySelectorAll(".animate-input").forEach((e) => {
     }
 
     if(idActive && pwActive) {
-      btn_login.removeAttribute("disabled");
+      loginBtn.removeAttribute("disabled");
+      loginBtn.addEventListener('click', function() {
+        signin_form.submit();
+      })
     } else {
-      btn_login.setAttribute("disabled", "true");
+      loginBtn.setAttribute("disabled", "true");
     }
-  }
-
-  // 비밀번호 표시 / 숨기기
-  if(button) {
-    button.onclick = () => {
-      if(input.getAttribute("type") === "text") {
-        input.setAttribute("type", "password");
-        button.innerHTML = "비밀번호 표시";
-      } else {
-        input.setAttribute("type", "text");
-        button.innerHTML = "숨기기";
-      }
-    }
-  }
+  })
 })
 
+
+// 비밀번호 표시 / 숨기기
+let pwInput = document.getElementById('userpw');
+let pwBtn = document.getElementById('pw-btn');
+
+function pwToggle() {
+  if(pwInput.getAttribute("type") == "text") {
+    pwInput.setAttribute("type", "password");
+    pwBtn.innerHTML = "비밀번호 표시";
+  } else {
+    pwInput.setAttribute("type", "text");
+    pwBtn.innerHTML = "숨기기";
+  }
+}
+pwBtn.addEventListener('click', pwToggle);
+
+
 // darkmode toggle
-darkmode_toggle.onclick = (e) => {
+function modeToggle(e) {
   e.preventDefault();
   let body = document.querySelector("body");
   body.classList.toggle("dark");
@@ -69,8 +65,7 @@ darkmode_toggle.onclick = (e) => {
   // 삼항연산자
   darkmode_toggle.innerHTML = body.classList.contains("dark") ? "Lightmode" : "Darkmode";
 }
+modeBtn.addEventListener('click', modeToggle);
 
 
-btn_login.addEventListener('click', function() {
-  signin_form.onsubmit();
-})
+
