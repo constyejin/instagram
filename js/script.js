@@ -9,7 +9,9 @@ let userPw = document.getElementById('userpw');
 
 // 공통 함수: 입력 필드 상태 업데이트
 // loginBtn 활성화 / 비활성화
+// input 값 여부를 확인하고 상태 업데이트
 function updateInputState(input, activeVar) {
+  // 공백 제외 input.value.length가 0보다 클 때 => input에 값이 있다
   if(input.value.trim().length > 0) {
     input.parentElement.classList.add("active");
     activeVar = true;
@@ -21,7 +23,9 @@ function updateInputState(input, activeVar) {
   return activeVar;
 }
 
+// 로그인 버튼 활성화 / 비활성화
 function handleInput(e) {
+  // // 이벤트가 발생한 input 
   let input = e.target;
   let type = input.getAttribute("type");
 
@@ -40,42 +44,6 @@ function handleInput(e) {
 
 userId.addEventListener('keyup', handleInput);
 userPw.addEventListener('keyup', handleInput);
-
-
-
-// let animateInputs = document.querySelectorAll('.animate-input');
-
-// animateInputs.forEach((item) => {
-//   let input = item.querySelector("input");
-
-//   // trim() : 공백을 제거하는 함수
-//   input.addEventListener('keyup', () => {
-//     if(input.value.trim().length > 0) {
-//       item.classList.add("active");
-//       if(input.getAttribute("type") === "text") {
-//         idActive = true;
-//       } else if(input.getAttribute("type") === "password") {
-//         pwActive = true;
-//       }
-//     } else {
-//       item.classList.remove("active");
-//       if(input.getAttribute("type") === "text") {
-//         idActive = false;
-//       } else if(input.getAttribute("type") === "password") {
-//         pwActive = false;
-//       }
-//     }
-
-//     if(idActive && pwActive) {
-//       loginBtn.removeAttribute("disabled");
-//       loginBtn.addEventListener('click', function() {
-//         signin_form.submit();
-//       })
-//     } else {
-//       loginBtn.setAttribute("disabled", "true");
-//     }
-//   })
-// })
 
 
 // 비밀번호 표시 / 숨기기
