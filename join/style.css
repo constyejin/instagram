@@ -1,20 +1,22 @@
-.join-para {
-  padding: 0 40px;
-  text-align: center;
+.input-box {
+  padding: 40px;
 }
 
-.join-para.top {
+.join-para {
   margin-bottom: 20px;
   font-size: 13px;
   font-weight: 700;
-  color: var(--txt-second-color)
+  text-align: center;
+  color: var(--txt-second-color);
 }
 
-.join-para.bottom {
-  margin: 20px 0 10px 0;
+.more-info {
+  margin: 20px 0;
   font-size: 11px;
+  text-align: center;
 
   a {
-    color: var(--a-color);
+    font-weight: 700;
+    color: var(--dark-blue);
   }
 }
