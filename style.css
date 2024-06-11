@@ -21,8 +21,8 @@
   outline: none;
   background-color: var(--light-blue);
   color: var(--white);
-  padding: 6px 10px;
-  border-radius: 4px;
+  padding: 8px 10px;
+  border-radius: 8px;
   font-size: 14px;
   font-weight: 700;
   cursor: pointer;
@@ -46,6 +46,7 @@ input,
 button {
   border: none;
   outline: none;
+  background-color: transparent;
 }
 
 body {
@@ -75,13 +76,13 @@ body {
 }
 
 .login-box {
-  padding: 0 40px;
+  padding: 40px;
 }
 
 .logo {
   width: 175px;
   height: 50px;
-  margin: 40px auto;
+  margin: 0 auto 40px;
 }
 
 .logo img {
@@ -204,7 +205,7 @@ button[type="submit"]:disabled {
 .forgot-pw {
   display: block;
   font-size: 12px;
-  margin: 26px 0;
+  margin-top: 26px;
   text-align: center;
   color: var(--dark-blue);
 }
