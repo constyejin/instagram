@@ -20,7 +20,9 @@ function updateInputState(input, activeVar) {
     activeVar = false;
   }
 
+  // 함수 실행 후, 해당 함수를 호출한 위치로 전달되는 값
   return activeVar;
+
 }
 
 // 로그인 버튼 활성화 / 비활성화
