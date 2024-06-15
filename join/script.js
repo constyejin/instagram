@@ -37,7 +37,7 @@ animateInputs.forEach((item) => {
     if(emailAct && nameAct && idAct && pwAct) {
       joinBtn.removeAttribute("disabled");
     } else {
-      joinBtn.setAttribute("disabled", "true");
+      joinBtn.setAttribute("disabled", true);
     }
   })
 });
