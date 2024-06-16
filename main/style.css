@@ -370,6 +370,11 @@ main {
     display: none;
   }
 
+  .gnb-icon-list li {
+    padding: 0 4px;
+    font-size: 20px;
+  }
+
   main {
     margin: 20px auto;
   }
@@ -392,5 +397,9 @@ main {
 
   .post-list {
     width: 100%;
+  }
+
+  .gnb-icon-list li {
+    font-size: 18px;
   }
 }
