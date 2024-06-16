@@ -24,7 +24,7 @@
         </a>
       </h1>
       <ul class="gnb-icon-list">
-        <li>
+        <li class="post-upload-btn">
           <a href="">
               <i class="fa-regular fa-square-plus"></i>
           </a>
@@ -250,40 +250,36 @@
     </div>
   </main>
 
-  <div class="post-upload">
-    <form class="post_form" action="" >
-      <header class="title">
-          <p>새 게시물 만들기</p>
-          <button type="button">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-      </header>
+  <div class="upload-wrapper">
+    <button class="post-close-btn" type="button">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
 
-      <div class="preview">
-        <div class="upload">
-          <div class="post_btn">
-            <div class="plus_icon">
-              <img src="../assets/imgaes/upload.png" alt="">
-            </div>
-            <p>포스트 이미지 추가</p>
-            <canvas id="imageCanvas"></canvas>
+    <div class="post-upload">
+      <form class="post_form" action="" >
+        <p>새 게시물 만들기</p>
+
+        <div class="post-img-preview">
+          <div class="plus_icon">
+            <img src="../assets/imgaes/upload.png" alt="">
           </div>
+
+          <p>포스트 이미지 추가</p>
+          <canvas id="img-canvas"></canvas>
         </div>
-      </div>
 
-      <p>
-        <input type="file" name="photo" id="id_photo" required="required">
-      </p>
+        <div class="post-file">
+          <input id="id_photo" type="file"  required="required">
+        </div>
 
-        <p>
+        <p class="post-txt">
           <textarea name="content" id="text_field" cols="50" rows="5" placeholder="문구를 입력하세요..."></textarea>
         </p>
 
         <button class="submit_btn btn-blue" type="submit">공유하기</button>
-    </form>
+      </form>
+    </div>
   </div>
-
-  <div class="overlay"></div>
 </div>
 
 <script src="./script.js"></script>
