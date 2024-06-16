@@ -3,21 +3,34 @@ let postAddBtn = document.querySelector('.post-upload-btn');
 let postCloseBtn = document.querySelector('.post-close-btn');
 
 
-function postAdd(e) {
-  e.preventDefault();
-  uploadPopup.classList.add('active');
+function popupOpen(item) {
+  item.classList.add('active');
 }
 
-function postClose() {
-  uploadPopup.classList.remove('active');
+function popupClose(item) {
+  item.classList.remove('active');
 }
 
-postAddBtn.addEventListener('click', postAdd);
-postCloseBtn.addEventListener('click', postClose);
+postAddBtn.addEventListener('click', () => {popupOpen(uploadPopup)});
+postCloseBtn.addEventListener('click', () => {popupClose(uploadPopup)});
+
+
+// Option Btn
+let optionPopup = document.querySelector('.more-option');
+let optionBtn = document.querySelectorAll('.option-btn');
+let optionCloseBtn = document.querySelector('.option-close-btn');
+
+optionBtn.forEach((btn) => {
+  btn.addEventListener('click', () => {
+    popupOpen(optionPopup)
+  })
+})
+
+optionCloseBtn.addEventListener('click', () => {popupClose(optionPopup)})
 
 
 let fileInput  = document.querySelector( "#id_photo" );
-let button     = document.querySelector( "input-file-trigger");
+let button = document.querySelector( "input-file-trigger");
 let the_return = document.querySelector(".file-return");
 
 // Show image
@@ -41,3 +54,6 @@ function handleImage(e){
 
   reader.readAsDataURL(e.target.files[0]);
 }
+
+
+
