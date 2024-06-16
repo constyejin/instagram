@@ -14,3 +14,16 @@
   --box-border-color: #666565;
   --txt-color: #d2d2d2;
 }
+
+.btn-blue {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: var(--light-blue);
+  color: var(--white);
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
