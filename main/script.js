@@ -1,0 +1,43 @@
+let uploadPopup = document.querySelector('.upload-wrapper');
+let postAddBtn = document.querySelector('.post-upload-btn');
+let postCloseBtn = document.querySelector('.post-close-btn');
+
+
+function postAdd(e) {
+  e.preventDefault();
+  uploadPopup.classList.add('active');
+}
+
+function postClose() {
+  uploadPopup.classList.remove('active');
+}
+
+postAddBtn.addEventListener('click', postAdd);
+postCloseBtn.addEventListener('click', postClose);
+
+
+let fileInput  = document.querySelector( "#id_photo" );
+let button     = document.querySelector( "input-file-trigger");
+let the_return = document.querySelector(".file-return");
+
+// Show image
+fileInput.addEventListener('change', handleImage, false);
+let canvas = document.getElementById('img-canvas');
+let ctx = canvas.getContext('2d');
+
+function handleImage(e){
+  let reader = new FileReader();
+  reader.onload = function(event){
+    let img = new Image();
+
+    img.onload = function(){
+      canvas.width = 500;
+      canvas.height = 400;
+      ctx.drawImage(img,0,0,500,400);
+    };
+
+    img.src = event.target.result;
+  };
+
+  reader.readAsDataURL(e.target.files[0]);
+}
