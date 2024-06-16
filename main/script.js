@@ -29,12 +29,8 @@ optionBtn.forEach((btn) => {
 optionCloseBtn.addEventListener('click', () => {popupClose(optionPopup)})
 
 
-let fileInput  = document.querySelector( "#id_photo" );
-let button = document.querySelector( "input-file-trigger");
-let the_return = document.querySelector(".file-return");
-
-// Show image
-fileInput.addEventListener('change', handleImage, false);
+// Canvas image
+let fileUploadBtn  = document.getElementById('file-upload-btn');
 let canvas = document.getElementById('img-canvas');
 let ctx = canvas.getContext('2d');
 
@@ -56,4 +52,4 @@ function handleImage(e){
 }
 
 
-
+fileUploadBtn.addEventListener('change', handleImage);
