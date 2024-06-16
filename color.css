@@ -27,3 +27,8 @@
   font-weight: 700;
   cursor: pointer;
 }
+
+.red-txt {
+  color: rgb(237, 73, 86);
+  font-weight: 600;
+}
